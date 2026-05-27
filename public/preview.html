@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>FinMate Mobile Preview</title>
+  <style>
+    body { margin: 0; font-family: Arial, sans-serif; background: #eef2ff; color: #111827; display: grid; place-items: center; min-height: 100vh; }
+    .phone { width: 360px; min-height: 720px; border-radius: 32px; background: #f8fafc; box-shadow: 0 24px 70px rgba(15,23,42,.25); overflow: hidden; }
+    header { padding: 24px; background: linear-gradient(135deg,#2563eb,#10b981); color: white; }
+    main { padding: 20px; }
+    .card { background: white; border-radius: 20px; padding: 18px; margin-bottom: 16px; box-shadow: 0 10px 25px rgba(15,23,42,.08); }
+    .amount { font-size: 32px; font-weight: 800; color: #2563eb; }
+    button { width: 100%; border: 0; border-radius: 16px; padding: 14px; color: white; background: #2563eb; font-weight: 700; }
+    nav { display: flex; justify-content: space-around; padding: 16px; background: white; color: #64748b; }
+  </style>
+</head>
+<body>
+  <section class="phone">
+    <header><h1>FinMate Mobile</h1><p>Control financiero personal</p></header>
+    <main>
+      <section class="card"><p>Balance estimado</p><div class="amount">$820.000</div><p>Gastos del mes: $430.000</p></section>
+      <section class="card"><h3>Próxima alerta</h3><p>Evitar superar el 70% del ingreso mensual en gastos variables.</p></section>
+      <button>Registrar movimiento</button>
+    </main>
+    <nav><span>Inicio</span><span>Movimientos</span><span>Metas</span><span>Alertas</span></nav>
+  </section>
+</body>
+</html>
