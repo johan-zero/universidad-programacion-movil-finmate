@@ -1,0 +1,16 @@
+:root {
+  --ion-color-primary: #2563eb;
+  --ion-color-primary-rgb: 37,99,235;
+  --ion-color-secondary: #10b981;
+  --ion-font-family: Inter, Arial, sans-serif;
+}
+.hero-card {
+  background: linear-gradient(135deg, #2563eb, #10b981);
+  border-radius: 24px;
+  padding: 24px;
+  color: white;
+  margin-bottom: 24px;
+  box-shadow: 0 18px 40px rgba(37,99,235,.25);
+}
+.hero-card h1 { margin: 0 0 8px; font-size: 28px; }
+.hero-card p { margin: 0; line-height: 1.5; }
