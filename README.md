@@ -1,28 +1,23 @@
 # FinMate Mobile - Énfasis en Programación Móvil
 
-Repositorio académico para la **Entrega 1** del módulo **Énfasis en Programación Móvil**.
+Repositorio académico para las entregas del módulo **Énfasis en Programación Móvil**.
 
 ## Descripción del proyecto
 
-FinMate Mobile es una aplicación móvil multiplataforma de baja complejidad propuesta para desarrollarse con **Ionic + React + Capacitor**. Su propósito es permitir que un usuario registre ingresos, gastos, metas de ahorro y alertas financieras básicas desde el dispositivo móvil.
+FinMate Mobile es una aplicación móvil híbrida y multiplataforma propuesta con **Ionic + React + Capacitor**. Su objetivo es apoyar el control financiero personal mediante registro de ingresos, gastos, metas de ahorro y alertas básicas desde un dispositivo móvil.
 
-La propuesta se diseñó como una aplicación principalmente **standalone**, de acuerdo con la guía de la asignatura: el procesamiento y almacenamiento inicial de la información se realiza localmente en el móvil, sin depender de un servidor externo.
+La aplicación se plantea como una solución principalmente **standalone**: el procesamiento inicial y la persistencia básica se realizan localmente, sin depender de un servidor externo en esta fase.
 
-## Objetivo académico
+## Estado de la Entrega 2
 
-Diseñar una aplicación móvil multiplataforma e híbrida, sustentada mediante un documento de diseño, flujo de navegación, mockups, requerimientos funcionales y no funcionales, y una base técnica inicial que permita avanzar hacia la implementación parcial de la Entrega 2.
+La Entrega 2 incorpora la realimentación recibida por el tutor y agrega formalización técnica mediante:
 
-## Alcance de la Entrega 1
-
-Esta entrega se centra en el **diseño del proyecto**, por lo que incluye:
-
-1. Justificación de la aplicación.
-2. Objetivo general y objetivos específicos.
-3. Requerimientos funcionales y no funcionales.
-4. Flujo de navegación.
-5. Mockups o wireframes.
-6. Propuesta de arquitectura Ionic standalone.
-7. Evidencias de estructura técnica y control de versiones.
+- Requerimientos funcionales y no funcionales codificados.
+- Diagrama UML de casos de uso.
+- Fichas de casos de uso.
+- Diagrama UML de secuencia.
+- Diagrama UML de clases de dominio.
+- Evidencia de avance funcional en navegación y pantallas base.
 
 ## Estructura del repositorio
 
@@ -43,29 +38,22 @@ Esta entrega se centra en el **diseño del proyecto**, por lo que incluye:
 │   └── preview.html
 ├── docs/
 │   ├── entrega_1_diseno.md
-│   ├── github_publication_commands.md
+│   ├── entrega_2_diseno.md
+│   ├── requerimientos.md
+│   ├── fichas_casos_uso.md
 │   ├── rubrica_checklist.md
 │   ├── repo_publico_checklist.md
+│   ├── uml/
+│   │   ├── casos_uso.md
+│   │   ├── secuencia_registrar_movimiento.md
+│   │   └── clases_dominio.md
 │   ├── assets/
 │   ├── evidencias/
 │   └── mockups/
-├── scripts/
-│   ├── validate-structure.mjs
-│   └── run-domain-tests.mjs
-└── .github/
-    ├── ISSUE_TEMPLATE/
-    │   └── task.md
-    └── pull_request_template.md
+└── scripts/
+    ├── validate-structure.mjs
+    └── run-domain-tests.mjs
 ```
-
-## Requisitos previos
-
-Para ejecutar o revisar la base técnica se requiere:
-
-- Node.js 20 o superior.
-- npm.
-- Git.
-- Ionic CLI, opcional para continuar la implementación.
 
 ## Instalación local
 
@@ -79,7 +67,7 @@ npm install
 npm run dev
 ```
 
-También se incluye una vista previa estática en:
+También se incluye una vista previa estática para evidenciar el flujo visual del prototipo:
 
 ```text
 public/preview.html
@@ -90,18 +78,16 @@ public/preview.html
 Validar estructura por capas:
 
 ```bash
-npm run validate:structure
+npm run validate
 ```
 
 Ejecutar pruebas de dominio:
 
 ```bash
-npm run test:domain
+npm run test
 ```
 
 ## Arquitectura propuesta
-
-La aplicación se organiza por capas para evitar una implementación monolítica:
 
 | Capa | Responsabilidad |
 |---|---|
@@ -110,16 +96,16 @@ La aplicación se organiza por capas para evitar una implementación monolítica
 | `data` | Repositorios y persistencia local. |
 | `core` | Utilidades transversales, validaciones y formateo. |
 
-## Relación con la rúbrica
+## Relación con la Entrega 2
 
-| Requisito de Entrega 1 | Evidencia en el repositorio |
+| Requisito solicitado | Evidencia en el repositorio |
 |---|---|
-| Justificación | `docs/entrega_1_diseno.md` |
-| Objetivos | `docs/entrega_1_diseno.md` |
-| Requerimientos funcionales/no funcionales | `docs/entrega_1_diseno.md` y `docs/rubrica_checklist.md` |
-| Flujo de navegación | `docs/assets/flujo_navegacion.png` |
-| Mockups o wireframes | `docs/mockups/` |
-| Base técnica Ionic | `package.json`, `capacitor.config.ts`, `src/` |
+| Requerimientos codificados | `docs/requerimientos.md` |
+| Diagrama UML de casos de uso | `docs/uml/casos_uso.md` |
+| Fichas de casos de uso | `docs/fichas_casos_uso.md` |
+| Diagrama de secuencia | `docs/uml/secuencia_registrar_movimiento.md` |
+| Diagrama de clases | `docs/uml/clases_dominio.md` |
+| Avance funcional | `src/` y `public/preview.html` |
 
 ## Autor
 
@@ -128,7 +114,3 @@ La aplicación se organiza por capas para evitar una implementación monolítica
 ## Materia
 
 Énfasis en Programación Móvil
-
-## Nota académica
-
-Este repositorio corresponde a la Entrega 1. La prioridad de esta fase es el diseño del proyecto y la justificación de su pertinencia como aplicación móvil híbrida y multiplataforma. La implementación parcial y el APK corresponden a entregas posteriores según la guía del módulo.
