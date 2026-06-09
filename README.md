@@ -17,6 +17,7 @@ La Entrega 2 incorpora la realimentación recibida por el tutor y agrega formali
 - Fichas de casos de uso.
 - Diagrama UML de secuencia.
 - Diagrama UML de clases de dominio.
+- Descripción de arquitectura y SDK de ejecución.
 - Evidencia de avance funcional en navegación y pantallas base.
 
 ## Estructura del repositorio
@@ -41,6 +42,7 @@ La Entrega 2 incorpora la realimentación recibida por el tutor y agrega formali
 │   ├── entrega_2_diseno.md
 │   ├── requerimientos.md
 │   ├── fichas_casos_uso.md
+│   ├── arquitectura_sdk.md
 │   ├── rubrica_checklist.md
 │   ├── repo_publico_checklist.md
 │   ├── uml/
@@ -54,6 +56,12 @@ La Entrega 2 incorpora la realimentación recibida por el tutor y agrega formali
     ├── validate-structure.mjs
     └── run-domain-tests.mjs
 ```
+
+## Repositorio
+
+URL del proyecto: https://github.com/johan-zero/universidad-programacion-movil-finmate
+
+Rama principal: `main`.
 
 ## Instalación local
 
@@ -105,6 +113,7 @@ npm run test
 | Fichas de casos de uso | `docs/fichas_casos_uso.md` |
 | Diagrama de secuencia | `docs/uml/secuencia_registrar_movimiento.md` |
 | Diagrama de clases | `docs/uml/clases_dominio.md` |
+| Arquitectura y SDK | `docs/arquitectura_sdk.md` |
 | Avance funcional | `src/` y `public/preview.html` |
 
 ## Autor
