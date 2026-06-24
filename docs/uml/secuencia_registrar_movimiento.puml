@@ -1,0 +1,18 @@
+@startuml
+hide footbox
+actor Usuario
+participant "AddTransactionPage" as UI
+participant "createTransaction" as UC
+participant "LocalFinanceRepository" as Repo
+database "Preferences / localStorage" as Store
+Usuario -> UI: diligencia formulario
+Usuario -> UI: presiona Guardar
+UI -> UC: createTransaction(datos)
+UC -> UC: valida categoría y valor
+UC --> UI: Transaction válida
+UI -> Repo: saveTransaction(transaction)
+Repo -> Store: lee y actualiza movimientos
+Store --> Repo: confirmación
+Repo --> UI: guardado correcto
+UI --> Usuario: muestra historial actualizado
+@enduml
