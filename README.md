@@ -1,125 +1,94 @@
 # FinMate Mobile - Énfasis en Programación Móvil
 
-Repositorio académico para las entregas del módulo **Énfasis en Programación Móvil**.
+Repositorio académico del proyecto **FinMate Mobile**, desarrollado para el módulo Énfasis en Programación Móvil.
 
-## Descripción del proyecto
+## Repositorio público
 
-FinMate Mobile es una aplicación móvil híbrida y multiplataforma propuesta con **Ionic + React + Capacitor**. Su objetivo es apoyar el control financiero personal mediante registro de ingresos, gastos, metas de ahorro y alertas básicas desde un dispositivo móvil.
+- URL: `https://github.com/johan-zero/universidad-programacion-movil-finmate`
+- Rama principal: `main`
 
-La aplicación se plantea como una solución principalmente **standalone**: el procesamiento inicial y la persistencia básica se realizan localmente, sin depender de un servidor externo en esta fase.
+## Propósito
 
-## Estado de la Entrega 2
+FinMate Mobile es una aplicación móvil híbrida y multiplataforma construida con **Ionic, React y Capacitor**. Apoya el control financiero personal mediante registro local de ingresos y gastos, consulta de balance, historial, metas, alertas y preferencias.
 
-La Entrega 2 incorpora la realimentación recibida por el tutor y agrega formalización técnica mediante:
+La propuesta es principalmente **standalone**: los movimientos y preferencias se gestionan localmente, sin depender de un servidor externo durante esta fase académica.
+
+## Avance de Entrega 2
+
+Esta versión incorpora la realimentación del tutor y evidencia:
 
 - Requerimientos funcionales y no funcionales codificados.
 - Diagrama UML de casos de uso.
 - Fichas de casos de uso.
 - Diagrama UML de secuencia.
 - Diagrama UML de clases de dominio.
-- Descripción de arquitectura y SDK de ejecución.
-- Evidencia de avance funcional en navegación y pantallas base.
+- Arquitectura por capas y SDK de ejecución.
+- Navegación finalizada entre interfaces.
+- Implementación parcial de los requerimientos mediante persistencia local con Capacitor Preferences.
+- Proyecto Android de Capacitor preparado para compilación en Android Studio.
 
-## Estructura del repositorio
-
-```text
-.
-├── README.md
-├── package.json
-├── capacitor.config.ts
-├── index.html
-├── src/
-│   ├── app/
-│   ├── core/
-│   ├── data/
-│   ├── domain/
-│   ├── presentation/
-│   └── theme/
-├── public/
-│   └── preview.html
-├── docs/
-│   ├── entrega_1_diseno.md
-│   ├── entrega_2_diseno.md
-│   ├── requerimientos.md
-│   ├── fichas_casos_uso.md
-│   ├── arquitectura_sdk.md
-│   ├── rubrica_checklist.md
-│   ├── repo_publico_checklist.md
-│   ├── uml/
-│   │   ├── casos_uso.md
-│   │   ├── secuencia_registrar_movimiento.md
-│   │   └── clases_dominio.md
-│   ├── assets/
-│   ├── evidencias/
-│   └── mockups/
-└── scripts/
-    ├── validate-structure.mjs
-    └── run-domain-tests.mjs
-```
-
-## Repositorio
-
-URL del proyecto: https://github.com/johan-zero/universidad-programacion-movil-finmate
-
-Rama principal: `main`.
-
-## Instalación local
-
-```bash
-npm install
-```
-
-## Ejecución del prototipo
-
-```bash
-npm run dev
-```
-
-También se incluye una vista previa estática para evidenciar el flujo visual del prototipo:
-
-```text
-public/preview.html
-```
-
-## Validaciones locales
-
-Validar estructura por capas:
-
-```bash
-npm run validate
-```
-
-Ejecutar pruebas de dominio:
-
-```bash
-npm run test
-```
-
-## Arquitectura propuesta
+## Arquitectura
 
 | Capa | Responsabilidad |
 |---|---|
-| `presentation` | Pantallas, componentes visuales y navegación. |
-| `domain` | Entidades, reglas de negocio y casos de uso. |
-| `data` | Repositorios y persistencia local. |
-| `core` | Utilidades transversales, validaciones y formateo. |
+| `src/presentation` | Pantallas, componentes visuales y navegación. |
+| `src/app` | Rutas, contexto de aplicación y coordinación de estado. |
+| `src/domain` | Entidades, contratos y casos de uso. |
+| `src/data` | Persistencia local y repositorios. |
+| `src/core` | Utilidades transversales. |
 
-## Relación con la Entrega 2
+La organización separa la interfaz de la lógica de negocio y de la persistencia, facilitando pruebas, mantenimiento y evolución hacia Android.
 
-| Requisito solicitado | Evidencia en el repositorio |
+## Requisitos de ejecución
+
+- Node.js 20 LTS o superior.
+- npm.
+- Android Studio y Android SDK para compilar APK.
+
+## Ejecución local
+
+```bash
+npm install
+npm run dev
+```
+
+## Validaciones
+
+```bash
+npm run validate
+npm run test
+npm run build
+npx cap sync android
+```
+
+## Compilación APK
+
+El proyecto Android se genera con Capacitor. Para crear el APK en un equipo con Android Studio y Android SDK:
+
+```bash
+npx cap open android
+```
+
+En Android Studio, ejecutar **Build > Build APK(s)**. La guía completa está disponible en `docs/apk_compilacion.md`.
+
+## Evidencias y documentación
+
+| Elemento | Ubicación |
 |---|---|
-| Requerimientos codificados | `docs/requerimientos.md` |
-| Diagrama UML de casos de uso | `docs/uml/casos_uso.md` |
+| Documento técnico Entrega 2 | `docs/entrega_2_diseno.md` |
+| Requerimientos | `docs/requerimientos.md` |
 | Fichas de casos de uso | `docs/fichas_casos_uso.md` |
-| Diagrama de secuencia | `docs/uml/secuencia_registrar_movimiento.md` |
-| Diagrama de clases | `docs/uml/clases_dominio.md` |
+| Matriz de trazabilidad | `docs/matriz_trazabilidad.md` |
 | Arquitectura y SDK | `docs/arquitectura_sdk.md` |
-| Avance funcional | `src/` y `public/preview.html` |
+| Casos de uso UML | `docs/uml/casos_uso.puml` |
+| Secuencia UML | `docs/uml/secuencia_registrar_movimiento.puml` |
+| Clases UML | `docs/uml/clases_dominio.puml` |
+| Guía de APK | `docs/apk_compilacion.md` |
 
 ## Autor
 
-**Johan Sebastian Rodriguez**
+**Johan Sebastian Rodríguez**
 
-## Materia
+## Tutor
 
-Énfasis en Programación Móvil
+**Víctor Fabián Castro Pérez**
