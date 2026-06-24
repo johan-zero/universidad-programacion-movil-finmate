@@ -8,20 +8,14 @@ interface CreateTransactionInput {
 }
 
 export function createTransaction(input: CreateTransactionInput): Transaction {
-  if (!input.category.trim()) {
-    throw new Error('La categoría es obligatoria.');
-  }
-
-  if (input.amount <= 0) {
-    throw new Error('El valor debe ser mayor que cero.');
-  }
-
+  if (!input.category.trim()) throw new Error('La categoría es obligatoria.');
+  if (input.amount <= 0) throw new Error('El valor debe ser mayor que cero.');
   return {
     id: `${Date.now()}`,
     type: input.type,
     category: input.category.trim(),
     amount: input.amount,
-    note: input.note?.trim(),
-    createdAt: new Date().toISOString()
+    note: input.note?.trim() ?? '',
+    date: new Date().toISOString()
   };
 }
