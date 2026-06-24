@@ -1,6 +1,6 @@
 export interface BudgetSummary {
-  totalIncome: number;
-  totalExpense: number;
+  income: number;
+  expenses: number;
   balance: number;
-  expenseRatio: number;
+  warningLevel: string;
 }
