@@ -1,0 +1,30 @@
+@startuml
+skinparam shadowing false
+class Transaction {
+  +id: string
+  +type: TransactionType
+  +category: string
+  +amount: number
+  +note: string
+  +date: string
+}
+class BudgetSummary {
+  +income: number
+  +expenses: number
+  +balance: number
+  +warningLevel: string
+}
+interface FinanceRepository {
+  +listTransactions(): Promise<Transaction[]>
+  +saveTransaction(transaction): Promise<void>
+  +clear(): Promise<void>
+}
+class LocalFinanceRepository
+class createTransaction
+class calculateBudgetSummary
+LocalFinanceRepository ..|> FinanceRepository
+FinanceRepository ..> Transaction
+createTransaction ..> Transaction
+calculateBudgetSummary ..> Transaction
+calculateBudgetSummary ..> BudgetSummary
+@enduml
