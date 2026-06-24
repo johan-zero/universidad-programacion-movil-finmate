@@ -1,0 +1,26 @@
+@startuml
+left to right direction
+skinparam shadowing false
+skinparam packageStyle rectangle
+actor Usuario
+rectangle "FinMate Mobile" {
+  usecase "CU-01\nIniciar sesión" as CU01
+  usecase "CU-02\nConsultar resumen" as CU02
+  usecase "CU-03\nRegistrar movimiento" as CU03
+  usecase "CU-04\nConsultar historial" as CU04
+  usecase "CU-05\nConsultar metas" as CU05
+  usecase "CU-06\nConsultar alertas" as CU06
+  usecase "CU-07\nConfigurar preferencias" as CU07
+  usecase "Validar datos" as VAL
+  usecase "Calcular balance" as BAL
+}
+Usuario --> CU01
+Usuario --> CU02
+Usuario --> CU03
+Usuario --> CU04
+Usuario --> CU05
+Usuario --> CU06
+Usuario --> CU07
+CU03 ..> VAL : <<include>>
+CU02 ..> BAL : <<include>>
+@enduml
